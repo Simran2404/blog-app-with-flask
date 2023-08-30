@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div style="max-width: 400px; margin: 0 auto;">
+  <form method="POST" style="padding: 20px; background-color: #f7f7f7; border-radius: 5px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+
+    <h3 style="text-align: center; margin-bottom: 20px;">Sign Up</h3>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        class="form-control"
+        placeholder="Enter Email"
+        style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 3px; margin-bottom: 10px;"
+      />
+
+      <label for="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control"
+        placeholder="Enter Username"
+        style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 3px; margin-bottom: 10px;"
+      />
+
+      <label for="password1">Password</label>
+      <input
+        type="password"
+        id="password1"
+        name="password1"
+        class="form-control"
+        placeholder="Enter Password"
+        style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 3px; margin-bottom: 10px;"
+      />
+
+      <label for="password2">Password Again</label>
+      <input
+        type="password"
+        id="password2"
+        name="password2"
+        class="form-control"
+        placeholder="Enter Password Again"
+        style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 3px; margin-bottom: 20px;"
+      />
+
+      <div style="text-align: center;">
+        <button class="btn btn-primary" type="submit" style="padding: 10px 20px; border-radius: 3px;">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

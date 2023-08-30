@@ -1,0 +1,3 @@
+# Ignore instance folder and .db files
+instance/
+*.db
