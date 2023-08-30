@@ -1,25 +1,29 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
-from flask_login import LoginManager, login_manager
+from flask_login import LoginManager
+from werkzeug.utils import secure_filename
+import os
 
-db= SQLAlchemy()
+db = SQLAlchemy()
 DB_NAME = "database.db"
-
+UPLOAD_FOLDER = "images/upload_folder" 
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = "helloworld"
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER 
+
     db.init_app(app)
-    
+
     from .views import views
     from .auth import auth
 
     app.register_blueprint(views, url_prefix="/")
     app.register_blueprint(auth, url_prefix="/")
     
-    from .models import User 
+    from .models import User, Post
 
     create_database(app)
 
